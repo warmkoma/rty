@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тестовая страница</title>
+</head>
+
+<body>
+<form action="blanck.php" method="POST" enctype="multipart/form-data">
+    <div>Заповнення замовлення</div>
+    <div>Яку саме піцу Ви хочете?</div>
+    <select name="theme" required="required">
+       <option value=""> Виберіть піцу</option>
+       <option>М'ясна</option>
+       <option>Гавайська</option>
+       <option>Чотири сезони</option>
+       <option>Чотири сири</option>
+    </select>
+    <br>
+    <div>Додати до піци:</div>
+    <div>бекон</div>
+    <input type="checkbox" name="var" value="бекон:">
+    <div>маслини</div>
+    <input type="checkbox" name="var" value="маслини:">
+    <div>сир</div>
+    <input type="checkbox" name="var" value="сир:">
+    <br>
+    <div>Номер телефону:</div>
+    <input type="tel" name="number" placeholder="Ваш номер телефону:">
+    <br>
+    <div>Спосіб доставки:</div>
+    <div>Самовивіз</div>
+    <input type="radio" name="transport" value="Самовивіз">
+    <div>Доставка</div>
+    <input type="radio" name="transport" value="Доставка">
+    <br>
+    <div>Адреса:</div>
+    <input type="text" name="name" placeholder="Ваша адреса:">
+    <br>
+    <input type="submit" name="submit_btn" value="Відправити">
+</form>
+</body>
+</html>
