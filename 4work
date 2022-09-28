@@ -1,0 +1,91 @@
+<?php
+
+$arr = [
+    1,
+    6,
+    [
+        3,
+        4,
+        4,
+        [
+            2,
+            3,
+        ],
+    ],
+    3,
+];
+
+function arrayParse(array $arr, int $exKey): array
+{
+    $result = [];
+    foreach ($arr as $key => $value){
+        if (is_array($value)){
+            $result = array_merge($result, arrayParse($value, $exKey));
+        } else {
+            if ($key === $exKey){
+                $result[] = $value;
+            }
+        }
+    }return $result;
+}
+
+var_dump(arrayParse($arr, 1));
+
+echo '<hr>';
+
+$text = "baberbabbb";
+$sym = "b";
+
+function searchSym(string $text, string $sym): int
+{
+    if ($text == int OR $sym == int){
+        return false;
+    } else {
+        return substr_count($text, $sym);
+    }
+}
+var_dump(substr_count($text, $sym));
+
+echo '<hr>';
+
+$array = [
+    1,
+    8,
+    [
+        7,
+        4,
+        5,
+        [
+            6,
+            4,
+        ],
+    ],
+    4,
+];
+
+function arraySumRecursive(array $array): int
+{
+    $sum = 0;
+    foreach ($array as $value){
+        if (is_array($value)){
+            $sum += arraySumRecursive($value);
+        }else{
+            $sum += $value;
+        }
+    }
+    return $sum;
+}
+
+var_dump(arraySumRecursive($array));
+
+echo '<hr>';
+
+$bigSquare =4;
+$smallSquare = 1;
+
+function countSquare(int $bigSquare, int $smallSquare): float
+{
+    return($bigSquare * $bigSquare)/($smallSquare * $smallSquare);
+}
+
+var_dump(countSquare($bigSquare, $smallSquare));
